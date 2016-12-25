@@ -5,50 +5,50 @@ gui::gui()
     QObject::connect(&g,&GameWindow::prepared,this,&gui::gprepared);
     QObject::connect(&g,&GameWindow::unprepared,this,&gui::gunprepared);
     QObject::connect(&g,&GameWindow::goback,this,&gui::ggoback);
-    QObject::connect(&g,&GameWindow::exit,this,&gui::gexit);
     QObject::connect(&g,&GameWindow::endturn,this,&gui::gendturn);
+    QObject::connect(&g,&GameWindow::explode,this,&gui::gexplode);
 }
 void gui::showgame()
 {
     g.show();
 }
 
-void gui::addplayer(int seat,int id)
+void gui::flush(QVector<QPair<int, int> > vect, int prepared)
 {
-    g.addplayer(seat-1,id);
+    QVector<QPair<int,int>>::iterator i;
+    for(i=vect.begin();i!=vect.end();i++){
+    g.addplayer(i->first,i->second);}
+    g.showprepared(prepared);
 }
 void gui::myplayer(int seat, int id)
 {
-    g.myplayer(seat-1,id);
+    g.myplayer(seat,id);
 }
 
-void gui::gprepared(int id)
+void gui::gprepared()
 {
-    emit prepared(id);
+    emit ready();
 }
-void gui::gunprepared(int id)
+void gui::gunprepared()
 {
-    emit unprepared(id);
+    emit cancel();
 }
-void gui::ggoback(int id)
+void gui::ggoback()
 {
-    emit goback(id);
+    emit quit();
 }
-void gui::gexit(int id)
-{
-    emit exit(id);
-}
-void gui::start(int role)
+
+void gui::role(int role)
 {
     g.start(role);
 }
-void gui::getmessage(int seat, QString str)
+void gui::showmessage(int seat, QString str)
 {
     g.getmessage(seat,str);
 }
-void gui::gspeak(int id,QString str)
+void gui::gspeak(QString str)
 {
-    emit speak(id,str);
+    emit speak(str);
 }
 void gui::myturn()
 {
@@ -56,10 +56,55 @@ void gui::myturn()
 }
 void gui::gendturn()
 {
-    emit endturn();
+    emit endspeaking();
 }
 
-void gui::gameover()
+/*void gui::gameover()
 {
     g.gameover();
+}*/
+/*int gui::wolfsturn(QVector<int> player)
+{
+    return g.wolfsturn(player);
+}*/
+int gui::decide(QVector<int> player,bool choose0)
+{
+    if(choose0==false)
+    return g.vote(player);
+    else
+    return g.poison(player);
+}
+
+
+bool gui::choose()
+{
+    return g.officercandidate();
+}
+/*bool gui::medicine()
+{
+    return g.medicine();
+}
+int gui::poison(QVector<int> player)
+{
+    return g.poison(player);
+}
+int gui::prophet(QVector<int> player)
+{
+    return g.prophet(player);
+}
+int gui::hunter(QVector<int> player)
+{
+    return g.hunter(player);
+}
+bool gui::officerdecide()
+{
+    return g.officerdecide();
+}*/
+void gui::gexplode()
+{
+    emit explode();
+}
+void gui::endturn()
+{
+    g.endturn();
 }

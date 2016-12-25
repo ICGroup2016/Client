@@ -27,14 +27,20 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>550</x>
       <y>410</y>
-      <width>41</width>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="text">
-     <string>发送</string>
+     <string>发送（&amp;S）</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -110,7 +116,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>680</x>
       <y>410</y>
       <width>71</width>
       <height>21</height>
@@ -120,52 +126,15 @@
      <string>结束发言</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_1">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>200</y>
-      <width>131</width>
-      <height>231</height>
-     </rect>
-    </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#6bc1c5;&quot;&gt;游戏进行阶段&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(0, 0, 0, 150)</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <property name="lineWidth">
-     <number>2</number>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="undoRedoEnabled">
-     <bool>true</bool>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="textEdit_2">
     <property name="enabled">
      <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>60</x>
       <y>190</y>
-      <width>401</width>
+      <width>571</width>
       <height>201</height>
      </rect>
     </property>
@@ -377,6 +346,9 @@ font: 10pt &quot;Algerian&quot;;
       <string>ID：1234</string>
      </property>
     </widget>
+    <zorder>pushButton_2</zorder>
+    <zorder>label_2</zorder>
+    <zorder>notebook_2</zorder>
    </widget>
    <widget class="QFrame" name="frame_3">
     <property name="geometry">
@@ -733,6 +705,9 @@ font: 10pt &quot;Algerian&quot;;
       <string>ID：1234</string>
      </property>
     </widget>
+    <zorder>pushButton_6</zorder>
+    <zorder>label_6</zorder>
+    <zorder>notebook_2</zorder>
    </widget>
    <widget class="QFrame" name="frame_7">
     <property name="geometry">
@@ -1274,14 +1249,20 @@ font: 10pt &quot;Algerian&quot;;
     </property>
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>60</x>
       <y>410</y>
-      <width>371</width>
+      <width>491</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(0, 0, 0, 150);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
     </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -1295,19 +1276,6 @@ font: 10pt &quot;Algerian&quot;;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_16">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>310</y>
-      <width>101</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>退出游戏</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -1340,6 +1308,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_19">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>680</x>
@@ -1381,9 +1352,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="pushButton_22">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>390</y>
-      <width>111</width>
+      <x>680</x>
+      <y>310</y>
+      <width>101</width>
       <height>28</height>
      </rect>
     </property>
@@ -1434,7 +1405,7 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>820</x>
       <y>220</y>
-      <width>101</width>
+      <width>91</width>
       <height>101</height>
      </rect>
     </property>
@@ -1454,17 +1425,43 @@ p, li { white-space: pre-wrap; }
      <bool>false</bool>
     </property>
    </widget>
-   <zorder>pushButton_20</zorder>
-   <zorder>pushButton_16</zorder>
+   <widget class="QPushButton" name="pushButton_23">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>400</y>
+      <width>61</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>是</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_24">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>400</y>
+      <width>61</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>否</string>
+    </property>
+   </widget>
+   <zorder>pushButton_21</zorder>
+   <zorder>pushButton_13</zorder>
    <zorder>pushButton_19</zorder>
+   <zorder>pushButton_15</zorder>
+   <zorder>pushButton_22</zorder>
+   <zorder>pushButton_20</zorder>
    <zorder>pushButton_18</zorder>
    <zorder>pushButton</zorder>
    <zorder>label</zorder>
-   <zorder>pushButton_13</zorder>
    <zorder>pushButton_14</zorder>
-   <zorder>pushButton_15</zorder>
    <zorder>pushButton_17</zorder>
-   <zorder>textEdit_1</zorder>
    <zorder>textEdit_2</zorder>
    <zorder>frame_1</zorder>
    <zorder>frame_2</zorder>
@@ -1480,11 +1477,11 @@ p, li { white-space: pre-wrap; }
    <zorder>frame_12</zorder>
    <zorder>textEdit</zorder>
    <zorder>label_13</zorder>
-   <zorder>pushButton_21</zorder>
-   <zorder>pushButton_22</zorder>
    <zorder>label_14</zorder>
    <zorder>label_15</zorder>
    <zorder>label_16</zorder>
+   <zorder>pushButton_23</zorder>
+   <zorder>pushButton_24</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
