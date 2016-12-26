@@ -42,6 +42,9 @@
     <property name="text">
      <string>发送（&amp;S）</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -83,6 +86,9 @@
     <property name="text">
      <string>准备</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_14">
     <property name="geometry">
@@ -96,6 +102,9 @@
     <property name="text">
      <string>清除记录</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_15">
     <property name="geometry">
@@ -108,6 +117,9 @@
     </property>
     <property name="text">
      <string>返回大厅</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_17">
@@ -124,6 +136,9 @@
     </property>
     <property name="text">
      <string>结束发言</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit_2">
@@ -346,9 +361,6 @@ font: 10pt &quot;Algerian&quot;;
       <string>ID：1234</string>
      </property>
     </widget>
-    <zorder>pushButton_2</zorder>
-    <zorder>label_2</zorder>
-    <zorder>notebook_2</zorder>
    </widget>
    <widget class="QFrame" name="frame_3">
     <property name="geometry">
@@ -705,9 +717,6 @@ font: 10pt &quot;Algerian&quot;;
       <string>ID：1234</string>
      </property>
     </widget>
-    <zorder>pushButton_6</zorder>
-    <zorder>label_6</zorder>
-    <zorder>notebook_2</zorder>
    </widget>
    <widget class="QFrame" name="frame_7">
     <property name="geometry">
@@ -1306,6 +1315,9 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>记事本</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_19">
     <property name="enabled">
@@ -1322,6 +1334,9 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>空刀/不毒</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_20">
     <property name="geometry">
@@ -1334,6 +1349,9 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>自爆</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_21">
@@ -1348,6 +1366,9 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>搜索发言</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_22">
     <property name="geometry">
@@ -1360,6 +1381,9 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>更改文字格式</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_14">
@@ -1434,8 +1458,20 @@ p, li { white-space: pre-wrap; }
       <height>28</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string>是</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_24">
@@ -1450,17 +1486,20 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>否</string>
     </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
    </widget>
-   <zorder>pushButton_21</zorder>
-   <zorder>pushButton_13</zorder>
    <zorder>pushButton_19</zorder>
+   <zorder>pushButton_20</zorder>
+   <zorder>pushButton_14</zorder>
+   <zorder>pushButton_13</zorder>
+   <zorder>pushButton_21</zorder>
    <zorder>pushButton_15</zorder>
    <zorder>pushButton_22</zorder>
-   <zorder>pushButton_20</zorder>
    <zorder>pushButton_18</zorder>
    <zorder>pushButton</zorder>
    <zorder>label</zorder>
-   <zorder>pushButton_14</zorder>
    <zorder>pushButton_17</zorder>
    <zorder>textEdit_2</zorder>
    <zorder>frame_1</zorder>

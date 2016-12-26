@@ -118,6 +118,7 @@ void GameWindow::on_actionChakan_triggered()
 void GameWindow::exploded()
 {
     emit explode();
+    ui->pushButton_20->setEnabled(false);
 }
 
 void GameWindow::on_pushButton_clicked()

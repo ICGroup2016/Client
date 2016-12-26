@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     QVector<QPair<int,int>> vectp;
     vectp<<pair1<<pair2<<pair3;
     maingui.flush(vectp,2);
-    maingui.role(5);
-    maingui.showmessage(0,"天黑请闭眼");
+    maingui.role(1);
+    maingui.showmessage(-1,"天黑请闭眼");
     maingui.showmessage(1,"我是预言家");
     QVector<int> vect;
     vect<<2<<5;
