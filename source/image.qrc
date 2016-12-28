@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icon/滑稽.jpg</file>
+        <file>icon/木板.jpg</file>
+        <file>icon/myico.ico</file>
+        <file>icon/壁纸.jpg</file>
+        <file>icon/v.jpg</file>
+        <file>icon/question30.png</file>
+        <file>icon/witch.ico</file>
+        <file>icon/crystal_ball.ico</file>
+        <file>icon/farmer.ico</file>
+        <file>icon/gun.ico</file>
+    </qresource>
+</RCC>
