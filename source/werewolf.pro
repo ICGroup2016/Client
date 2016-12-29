@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     dialog.cpp \
     message.cpp \
     tcpsock.cpp \
-    core.cpp
+    core.cpp\
+    search.cpp
 
 HEADERS  += hall.h \
     warning.h \
@@ -33,14 +34,16 @@ HEADERS  += hall.h \
     dialog.h \
     message.h \
     tcpsock.h \
-    core.h
+    core.h\
+    search.h
 
 FORMS    += hall.ui \
     warning.ui \
     createroom.ui \
     login.ui \
     gamewindow.ui \
-    dialog.ui
+    dialog.ui\
+    search.ui
 
 RESOURCES += \
     myresource.qrc \

@@ -101,13 +101,16 @@ void gui::showgame()
 {
     g.show();
 }
-
-void gui::flush(QVector<QPair<int, int> > vect, int prepared)
+void gui::back(bool permission)
+{
+    g.back(permission);
+}
+void gui::flush(QVector<QPair<int, int> > vect, int prepared,int sum)
 {
     QVector<QPair<int,int>>::iterator i;
     for(i=vect.begin();i!=vect.end();i++){
     g.addplayer(i->first,i->second);}
-    g.showprepared(prepared);
+    g.showprepared(prepared,sum);
 }
 void gui::myplayer(int seat, int id)
 {

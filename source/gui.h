@@ -35,7 +35,7 @@ public:
     void flushroom(QVector<QVector<int> >);
 
     void showgame();//窗口出现
-    void flush(QVector<QPair<int,int> >,int);//加入玩家:改为接受列表
+    void flush(QVector<QPair<int,int> >,int,int);//加入玩家:改为接受列表
     void myplayer(int seat, int id);//自身信息
     void role(int role);//开始游戏，告知身份
     void showmessage(int seat,QString str);//收取发言并显示
@@ -44,6 +44,7 @@ public:
     int decide(QVector<int>,bool);//选警长和投票通用，本来这两个就没区别吧
     bool choose();
     void endturn();//自爆时强制结束对话
+    void back(bool);//返回大厅
 
 
 signals:
