@@ -1,11 +1,11 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-12-11T10:03:07
+# Project created by QtCreator 2016-12-13T10:27:15
 #
 #-------------------------------------------------
 
-QT       += core gui network
-#QT       += webkitwidgets
+QT       += core gui
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = werewolf
@@ -13,38 +13,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        hall.cpp \
-    warning.cpp \
-    createroom.cpp \
-    login.cpp \
-    gui.cpp \
     gamewindow.cpp \
-    dialog.cpp \
-    message.cpp \
-    tcpsock.cpp \
-    core.cpp
+    gui.cpp \
+    search.cpp
 
-HEADERS  += hall.h \
-    warning.h \
-    createroom.h \
-    login.h \
-    gui.h \
+HEADERS  += \
     gamewindow.h \
-    dialog.h \
-    message.h \
-    tcpsock.h \
-    core.h
+    gui.h \
+    search.h
 
-FORMS    += hall.ui \
-    warning.ui \
-    createroom.ui \
-    login.ui \
+FORMS    += \
     gamewindow.ui \
-    dialog.ui
+    search.ui
 
 RESOURCES += \
-    myresource.qrc \
     image.qrc
-    image.qrc
-
-RC_FILE  += myico.rc

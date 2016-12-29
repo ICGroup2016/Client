@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QVector>
 #include<QPair>
+#include"search.h"
 namespace Ui {
 class GameWindow;
 }
@@ -32,8 +33,9 @@ public:
     int poison(QVector<int> player);
     int prophet(QVector<int> player);//预言家出场，验人结果用字符串告知
     int hunter(QVector<int>);//猎人死亡，发动技能
+    void back(bool);
     //void gameover();
-    void showprepared(int);
+    void showprepared(int,int);
     ~GameWindow();
 
 signals:
@@ -45,6 +47,7 @@ signals:
     void end();//结束发言
 
 private:
+    void setcolor();
     void on_actionChakan_triggered();
     void on_pushButton_clicked();
     void on_pushButton_13_clicked();
@@ -73,6 +76,9 @@ private:
     void chooseyes();
     void chooseno();
     void exploded();
+    void searchfor();
+    search s;
+    void show_text(QString findtext);
 };
 
 #endif // GameWindow_H

@@ -1,41 +1,19 @@
 #ifndef GUI_H
 #define GUI_H
-
-#include <QMainWindow>
-#include <QWidget>
-#include <QString>
-#include "hall.h"
-#include "login.h"
-#include "createroom.h"
 #include "gamewindow.h"
+#include<QObject>
+#include<QString>
 #include<QVector>
 #include<QPair>
-
-class gui :public QObject
+//部分提示词已包含在程序中
+//flush、quit、准备后取消退出
+class gui:public QObject
 {
     Q_OBJECT
-
 public:
-    explicit gui(QObject *parent=0);
-
-    void showlogin();
-
-    QPair<QString,int> acquireServer();
-
-    void showHall();
-
-    void warning();
-
-    void removeroom();
-
-    void enterroomok();
-
-    void hidehall();
-
-    void flushroom(QVector<QVector<int> >);
-
+    gui();
     void showgame();//窗口出现
-    void flush(QVector<QPair<int,int> >,int);//加入玩家:改为接受列表
+    void flush(QVector<QPair<int,int>>,int prepared, int sum);//加入玩家:改为接受列表
     void myplayer(int seat, int id);//自身信息
     void role(int role);//开始游戏，告知身份
     void showmessage(int seat,QString str);//收取发言并显示
@@ -44,42 +22,16 @@ public:
     int decide(QVector<int>,bool);//选警长和投票通用，本来这两个就没区别吧
     bool choose();
     void endturn();//自爆时强制结束对话
-
+    void back(bool);//返回大厅
 
 signals:
-
-    void Newroom(const int number);
-
-    void enterRoom(const int id);
-
     void ready();//准备
     void cancel();//取消准备
     void quit();//返回大厅
     void speak(QString);//发言
     void endspeaking();//结束发言
     void explode();//自爆
-
 private:
-
-
-    void openlogin();
-
-    void showcreateroom();
-
-    void onenewroom(const int number);
-
-    void enterroom(const int id);
-
-    void openweb();
-
-    void WArning();
-
-    hall w;
-
-    login l;
-
-    createroom c;
-
     GameWindow g;
     void gprepared();
     void gunprepared();
@@ -89,7 +41,17 @@ private:
     void gendturn();
     void gchoice(int);
     void gexplode();
-
 };
 
+/*bool officercandidate();//传递警徽也用vote（），点击自己头像即为撕毁
+bool officerdecide();
+int wolfsturn(QVector<int>);//自带提示“你要杀谁？”
+bool medicine();
+int poison(QVector<int> player);//选择是、否
+int prophet(QVector<int> player);//预言家出场，验人结果用字符串告知
+int hunter(QVector<int>);//猎人死亡，发动技能
+*/
+//void gameover();
+//void runforpolice();
+//killed已删除，直接发一句话就够了
 #endif // GUI_H
