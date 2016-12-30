@@ -45,7 +45,8 @@ signals:
     void goback();
     void explode();//自爆
     void end();//结束发言
-
+protected:
+    bool eventFilter(QObject *obj, QEvent *e);
 private:
     void setcolor();
     void on_actionChakan_triggered();
