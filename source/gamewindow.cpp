@@ -64,8 +64,7 @@ GameWindow::GameWindow(QWidget *parent) :
     frame[9]=ui->frame_10;
     frame[10]=ui->frame_11;
     frame[11]=ui->frame_12;
-    //   QSound::play ("../source/01.wav");
-    QString runPath = QCoreApplication::applicationDirPath();
+    runPath = QCoreApplication::applicationDirPath();
     bgm=new QSound(runPath+"/01.wav",this);
     bgm->setLoops(-1);
     bgm->play();
@@ -107,10 +106,6 @@ GameWindow::GameWindow(QWidget *parent) :
     color0=QColor( 0, 85, 255);
     ui->textEdit->setAcceptDrops(false);
     setAcceptDrops(true);
-    /*QPalette editpalette=ui->textEdit_2->palette();
-    editpalette.setColor(QPalette::HighlightedText,Qt::yellow);
-    editpalette.setColor(QPalette::HighlightedText,Qt::white);
-    ui->textEdit_2->setPalette(editpalette);*/
 }
 
 
@@ -413,6 +408,7 @@ void GameWindow::on_continue_2_clicked()
 void GameWindow::on_pushButton_16_clicked()
 {
     QString fileName=QFileDialog::getSaveFileName(this,tr("Save File"),".",tr("文本文件(*txt)"));
+    qDebug()<<fileName;
         if(fileName.isEmpty())
         {
             QMessageBox::information(this,tr("错误信息"),("请输入文件名！"));
@@ -485,4 +481,18 @@ void GameWindow::dropEvent(QDropEvent *event)
             ui->textEdit_2->setTextColor(color0);
         }
     }
+}
+void GameWindow::closeEvent(QCloseEvent *event)
+{
+    QFile *file=new QFile;
+    QString path=runPath;
+    path.replace("debug","000.txt");
+    file->setFileName(path);
+    file->open(QIODevice::WriteOnly);
+    QTextStream out(file);
+    QString text = ui->textEdit_2->toPlainText();
+    text.replace(QString("\n"), QString("\r\n"));
+    out<<text;
+    file->close();
+    delete file;
 }
