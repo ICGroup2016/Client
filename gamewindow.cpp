@@ -111,6 +111,9 @@ GameWindow::GameWindow(QWidget *parent) :
 
 void GameWindow::show_text(QString findtext)
 {
+    /*QTextCursor cursor=this->ui->textEdit_2->textCursor();
+    cursor.movePosition(QTextCursor::Start,QTextCursor::MoveAnchor,1);
+    ui->textEdit_2->append(findtext);*/
     if(ui->textEdit_2->find(findtext))
         {
             QPalette palette = ui->textEdit->palette();
@@ -126,6 +129,7 @@ void GameWindow::show_text(QString findtext)
 
 bool GameWindow::eventFilter(QObject *obj, QEvent *e)
 {
+    Q_ASSERT(obj == ui->textEdit);
     if (e->type() == QEvent::KeyPress)
     {
         QKeyEvent *event = static_cast<QKeyEvent*>(e);
@@ -404,6 +408,7 @@ void GameWindow::on_continue_2_clicked()
 void GameWindow::on_pushButton_16_clicked()
 {
     QString fileName=QFileDialog::getSaveFileName(this,tr("Save File"),".",tr("文本文件(*txt)"));
+    qDebug()<<fileName;
         if(fileName.isEmpty())
         {
             QMessageBox::information(this,tr("错误信息"),("请输入文件名！"));
@@ -418,8 +423,11 @@ void GameWindow::on_pushButton_16_clicked()
             QString text = ui->textEdit_2->toPlainText();
             text.replace(QString("\n"), QString("\r\n"));
             QString t(tr("玩家身份:")+ui->label_14->text()+' '+ui->label_15->text()+"\r\n");
+            //t.append(text);
             text.replace(QString("欢迎加入游戏！\r\n游戏准备后，若游戏没有结束，则无法退出游戏！"),t);
             out<<text;
+            //out<<tr("玩家身份： ")<<ui->label_14->text()<<std::ends<<ui->label_15->text()<<std::endl;
+            //out<<text;
             file->close();
             delete file;
         }
@@ -438,7 +446,7 @@ void GameWindow::on_actionJilu_triggered()
             if(!path.isEmpty()) {
                 QFile file(path);
                 if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                    QMessageBox::warning(this, tr("文件读取"),tr("不能打开文件:\n%1").arg(path));
+                    QMessageBox::warning(this, tr("Read File"),tr("不能打开文件:\n%1").arg(path));
                     return;
                 }
                 QTextStream in(&file);
@@ -507,10 +515,4 @@ void GameWindow::closeEvent(QCloseEvent *event)
     file->close();
     delete file;
     }
-    ui->pushButton_13->setVisible(true);
-    ui->pushButton_14->setVisible(true);
-    ui->pushButton_15->setVisible(true);
-    ui->pushButton_22->setVisible(true);
-    ui->label_15->setText(tr("未知"));
-    ui->label_16->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/icon/question30.png")));
 }
